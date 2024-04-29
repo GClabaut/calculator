@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    display: flex;
+    flex: 0 0 25%;
+    justify-content: center;
+}
