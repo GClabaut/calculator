@@ -9,7 +9,7 @@ function multiply (a, b) {
 }
 function divide (a, b) {
     return (a / b).toFixed(2).replace(/(\.[1-9]*)(0+)$/, "$1");
-}
+}/\.$/
 
 let firstNumber = '';
 let secondNumber = '';
@@ -44,22 +44,22 @@ function parse(number) {
 
 function calculus() {
     if (operator === '+') {
-        firstNumber = add(parse(firstNumber), parse(secondNumber)).toString()
+        firstNumber = add(parse(firstNumber), parse(secondNumber)).toString().replace(/\.$/, "")
         result();
         textDisplay();
     } else if (operator === '-') {
-        firstNumber = substract(parse(firstNumber), parse(secondNumber)).toString()
+        firstNumber = substract(parse(firstNumber), parse(secondNumber)).toString().replace(/\.$/, "")
         result();
         textDisplay();
     } else if (operator === '*') {
-        firstNumber = multiply(parse(firstNumber), parse(secondNumber)).toString()
+        firstNumber = multiply(parse(firstNumber), parse(secondNumber)).toString().replace(/\.$/, "")
         result();
         textDisplay();
     } else if (operator === '/' && secondNumber === '0') {
         clear()
-        display.textContent = 'ERROR';
+        display.textContent = "CAN'T DIVIDE BY ZERO DOOFUS";
     } else if (operator === '/') {
-        firstNumber = divide(parse(firstNumber), parse(secondNumber)).toString()
+        firstNumber = divide(parse(firstNumber), parse(secondNumber)).toString().replace(/\.$/, "")
         result();
         textDisplay();
     }
